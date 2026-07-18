@@ -8,6 +8,34 @@ The platform collects user interactions from web and mobile applications, proces
 
 ---
 
+## Architecture Diagram
+
+```mermaid
+flowchart LR
+
+A[Website]
+B[Mobile App]
+
+A --> C[Apache Kafka]
+B --> C
+
+C --> D[PySpark Structured Streaming]
+
+D --> E[S3 Raw Layer]
+
+E --> F[S3 Curated Layer]
+
+F --> G[Amazon Redshift]
+
+G --> H[Power BI]
+
+D --> I[CloudWatch]
+
+I --> J[SNS Alerts]
+```
+
+---
+
 # Business Scenario
 
 A large e-commerce company wants to understand customer behavior across its digital platforms.
