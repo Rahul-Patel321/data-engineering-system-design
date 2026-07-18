@@ -1,1 +1,25 @@
+flowchart LR
 
+A[Applications]
+
+A --> B[Kafka Producer]
+
+B --> C[Kafka Topic]
+
+C --> D1[Partition 1]
+C --> D2[Partition 2]
+C --> D3[Partition 3]
+
+D1 --> E[Consumer Group]
+D2 --> E
+D3 --> E
+
+E --> F[Spark Structured Streaming]
+
+F --> G[Transformation]
+
+G --> H[Amazon S3]
+
+H --> I[Amazon Redshift]
+
+I --> J[Power BI]
