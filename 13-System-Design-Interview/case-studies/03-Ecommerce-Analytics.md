@@ -8,6 +8,40 @@ The architecture focuses on scalability, reliability, security, monitoring, and 
 
 ---
 
+## Architecture Diagram
+
+```mermaid
+flowchart LR
+
+A[Website]
+B[Mobile App]
+C[Order Management]
+D[Inventory]
+E[Payment Gateway]
+
+A --> F[AWS Glue]
+B --> F
+C --> F
+D --> F
+E --> F
+
+F --> G[S3 Raw Layer]
+
+G --> H[PySpark ETL]
+
+H --> I[S3 Curated Layer]
+
+I --> J[Amazon Redshift]
+
+J --> K[Power BI]
+
+H --> L[CloudWatch]
+
+L --> M[SNS Alerts]
+```
+
+---
+
 # Business Scenario
 
 An e-commerce company sells products across multiple categories through its website and mobile application.
