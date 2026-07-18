@@ -1,1 +1,18 @@
 
+flowchart TD
+
+A[Raw Data]
+
+A --> B[Column Pruning]
+
+B --> C[Predicate Pushdown]
+
+C --> D[Partitioning]
+
+D --> E[Broadcast Join]
+
+E --> F[Parquet Output]
+
+F --> G[Redshift / Athena]
+
+G --> H[Power BI]
