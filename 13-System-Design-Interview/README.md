@@ -2,54 +2,18 @@
 
 Overview
 
+Learning Roadmap
+
 System Design Framework
 
 Architecture Principles
 
-============================
+Repository Structure
 
-Case Study 1
-Design Banking Data Platform
+Case Studies
 
-Problem
+Interview Cheat Sheet
 
-Requirements
+How to Use This Repository
 
-Architecture
-
-AWS Services
-
-Trade-offs
-
-Interview Questions
-
-============================
-
-Case Study 2
-Design Clickstream Analytics
-
-....
-
-============================
-
-Case Study 3
-
-============================
-
-Case Study 4
-
-============================
-
-Case Study 5
-
-============================
-
-Case Study 6
-
-============================
-
-Case Study 7
-
-============================
-
-Case Study 8
+References
