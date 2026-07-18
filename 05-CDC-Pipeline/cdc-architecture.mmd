@@ -1,1 +1,17 @@
+flowchart LR
 
+A[Source Database]
+
+A --> B[Transaction Logs]
+
+B --> C[AWS DMS / Debezium]
+
+C --> D[Kafka]
+
+D --> E[AWS Glue / Spark]
+
+E --> F[Amazon S3]
+
+F --> G[Amazon Redshift]
+
+G --> H[Power BI]
