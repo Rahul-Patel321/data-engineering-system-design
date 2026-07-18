@@ -1,1 +1,18 @@
 
+flowchart TD
+
+A[Source Systems]
+
+A --> B[ETL Pipeline]
+
+B --> C[CloudWatch Logs]
+
+B --> D[CloudWatch Metrics]
+
+D --> E[CloudWatch Alarm]
+
+E --> F[SNS]
+
+F --> G[Email / Slack / Teams]
+
+C --> H[Engineers]
