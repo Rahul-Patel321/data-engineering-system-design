@@ -8,6 +8,41 @@ This design focuses on scalability, reliability, security, cost optimization, an
 
 ---
 
+## Architecture Diagram
+
+```mermaid
+flowchart LR
+
+A[Core Banking System]
+B[Loan System]
+C[Credit Card System]
+D[Mobile Banking]
+
+A --> E[AWS Glue]
+B --> E
+C --> E
+D --> E
+
+E --> F[S3 Raw Layer]
+
+F --> G[PySpark ETL]
+
+G --> H[S3 Curated Layer]
+
+H --> I[Amazon Redshift]
+
+I --> J[Power BI]
+
+G --> K[CloudWatch]
+
+K --> L[SNS Alerts]
+```
+
+---
+
+
+---
+
 # Business Scenario
 
 A retail bank operates across multiple channels:
