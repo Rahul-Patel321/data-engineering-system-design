@@ -1,1 +1,20 @@
 
+flowchart TD
+
+A[EventBridge / Scheduler]
+
+A --> B[AWS Glue Workflow]
+
+B --> C[Glue Job - Extract]
+
+C --> D[Glue Job - Transform]
+
+D --> E[Glue Crawler]
+
+E --> F[Amazon Redshift]
+
+F --> G[Power BI]
+
+D --> H[CloudWatch Logs]
+
+B --> I[SNS Notification]
