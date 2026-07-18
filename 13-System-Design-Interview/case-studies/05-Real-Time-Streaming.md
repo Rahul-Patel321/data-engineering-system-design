@@ -6,6 +6,36 @@ This case study demonstrates how to design a scalable, fault-tolerant, and low-l
 
 ---
 
+## Architecture Diagram
+
+```mermaid
+flowchart LR
+
+A[Applications]
+B[Payment Gateway]
+C[POS Machines]
+
+A --> D[Apache Kafka]
+B --> D
+C --> D
+
+D --> E[PySpark Structured Streaming]
+
+E --> F[S3 Raw Layer]
+
+E --> G[S3 Curated Layer]
+
+G --> H[Amazon Redshift]
+
+H --> I[Power BI]
+
+E --> J[CloudWatch]
+
+J --> K[SNS Alerts]
+```
+
+---
+
 # Business Scenario
 
 A digital payments company wants to monitor payment transactions as they happen.
