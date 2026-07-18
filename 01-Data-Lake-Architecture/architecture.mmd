@@ -1,0 +1,30 @@
+flowchart LR
+
+A[Source Systems]
+
+A --> B[Databases]
+A --> C[REST APIs]
+A --> D[Kafka]
+A --> E[Files]
+
+B --> F[Amazon S3 / ADLS]
+C --> F
+D --> F
+E --> F
+
+F --> G[Bronze Layer]
+
+G --> H[AWS Glue / Databricks]
+
+H --> I[Silver Layer]
+
+I --> J[Business Transformations]
+
+J --> K[Gold Layer]
+
+K --> L[Amazon Redshift / Synapse]
+
+L --> M[Power BI]
+L --> N[Tableau]
+L --> O[Athena]
+L --> P[Machine Learning]
