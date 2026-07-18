@@ -1,1 +1,16 @@
 
+flowchart TD
+
+A[Source Data]
+
+A --> B[Data Quality Validation]
+
+B --> C{Validation Passed?}
+
+C -->|Yes| D[Transformation]
+
+D --> E[Data Warehouse]
+
+C -->|No| F[Quarantine Table]
+
+F --> G[Review & Reprocess]
