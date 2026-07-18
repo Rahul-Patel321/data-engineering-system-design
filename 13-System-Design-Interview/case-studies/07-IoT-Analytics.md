@@ -8,6 +8,32 @@ The architecture emphasizes scalability, reliability, monitoring, security, and 
 
 ---
 
+## Architecture Diagram
+
+```mermaid
+flowchart LR
+
+A[IoT Devices]
+
+A --> B[Apache Kafka]
+
+B --> C[PySpark Structured Streaming]
+
+C --> D[S3 Raw Layer]
+
+C --> E[S3 Curated Layer]
+
+E --> F[Amazon Redshift]
+
+F --> G[Power BI]
+
+C --> H[CloudWatch]
+
+H --> I[SNS Alerts]
+```
+
+---
+
 # Business Scenario
 
 A manufacturing company operates thousands of IoT-enabled machines across multiple production plants.
