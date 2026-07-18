@@ -8,6 +8,38 @@ The architecture emphasizes security, compliance, reliability, monitoring, and c
 
 ---
 
+## Architecture Diagram
+
+```mermaid
+flowchart LR
+
+A[Hospital Information System]
+B[Laboratory System]
+C[Pharmacy System]
+D[Insurance System]
+
+A --> E[AWS Glue]
+B --> E
+C --> E
+D --> E
+
+E --> F[S3 Raw Layer]
+
+F --> G[PySpark ETL]
+
+G --> H[S3 Curated Layer]
+
+H --> I[Amazon Redshift]
+
+I --> J[Power BI]
+
+G --> K[CloudWatch]
+
+K --> L[SNS Alerts]
+```
+
+---
+
 # Business Scenario
 
 A healthcare organization operates multiple hospitals and clinics.
