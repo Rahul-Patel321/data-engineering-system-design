@@ -8,6 +8,36 @@ The architecture focuses on scalability, tenant isolation, security, monitoring,
 
 ---
 
+## Architecture Diagram
+
+```mermaid
+flowchart LR
+
+A[Tenant A]
+B[Tenant B]
+C[Tenant C]
+
+A --> D[AWS Glue]
+B --> D
+C --> D
+
+D --> E[S3 Raw Layer]
+
+E --> F[PySpark ETL]
+
+F --> G[S3 Curated Layer]
+
+G --> H[Amazon Redshift]
+
+H --> I[Power BI]
+
+F --> J[CloudWatch]
+
+J --> K[SNS Alerts]
+```
+
+---
+
 # Business Scenario
 
 A SaaS company provides CRM software to thousands of businesses.
