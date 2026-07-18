@@ -6,6 +6,32 @@ This case study demonstrates how to design a Change Data Capture (CDC) pipeline 
 
 ---
 
+## Architecture Diagram
+
+```mermaid
+flowchart LR
+
+A[Source Database]
+
+A --> B[AWS DMS]
+
+B --> C[S3 Raw Layer]
+
+C --> D[PySpark CDC Processing]
+
+D --> E[S3 Curated Layer]
+
+E --> F[Amazon Redshift]
+
+F --> G[Power BI]
+
+D --> H[CloudWatch]
+
+H --> I[SNS Alerts]
+```
+
+---
+
 # Business Scenario
 
 A retail bank maintains customer, account, loan, and transaction data in an operational database.
