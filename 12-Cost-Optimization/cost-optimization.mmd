@@ -1,1 +1,18 @@
 
+flowchart TD
+
+A[Raw Data]
+
+A --> B[Parquet + Compression]
+
+B --> C[Partitioned S3 Storage]
+
+C --> D[Incremental Processing]
+
+D --> E[Optimized Glue / Spark Jobs]
+
+E --> F[Redshift / Athena]
+
+F --> G[Power BI]
+
+G --> H[Lower Cloud Cost]
